@@ -22,13 +22,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures
 }
 
 dependencies {
@@ -40,4 +44,8 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    //Dependencias de Firebase, para poder vincular la aplicación
+    implementation platform('com.google.firebase:firebase-bom:29.0.0')
+    //Dependencias de Firebase pero para usar las herramientas de analytics
+    implementation 'com.google.firebase:firebase-analytics'
 }
